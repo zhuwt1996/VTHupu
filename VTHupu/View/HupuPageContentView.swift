@@ -12,5 +12,9 @@ import UIKit
 
 class HupuPageContentView: UIView {
 
+    lazy var collectionView: UICollectionView = {
+        let collectionV = UICollectionView()
+        return collectionV
+    }()
     
 }
