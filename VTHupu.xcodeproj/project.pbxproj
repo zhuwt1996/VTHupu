@@ -8,24 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		970FEB98240CD51F00F19A2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970FEB97240CD51F00F19A2E /* AppDelegate.swift */; };
-		970FEB9A240CD51F00F19A2E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970FEB99240CD51F00F19A2E /* ViewController.swift */; };
+		970FEB9A240CD51F00F19A2E /* HUPUMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970FEB99240CD51F00F19A2E /* HUPUMainViewController.swift */; };
 		970FEB9D240CD51F00F19A2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 970FEB9B240CD51F00F19A2E /* Main.storyboard */; };
 		970FEB9F240CD52000F19A2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 970FEB9E240CD52000F19A2E /* Assets.xcassets */; };
 		970FEBA2240CD52000F19A2E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 970FEBA0240CD52000F19A2E /* LaunchScreen.storyboard */; };
 		970FEBAC240CD5C100F19A2E /* HupuPageTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970FEBAB240CD5C100F19A2E /* HupuPageTitleView.swift */; };
 		970FEBAE240CD5F300F19A2E /* HupuPageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970FEBAD240CD5F300F19A2E /* HupuPageContentView.swift */; };
+		970FEBB2240D062500F19A2E /* HUPURecommandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970FEBB1240D062500F19A2E /* HUPURecommandViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		970FEB94240CD51F00F19A2E /* VTHupu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VTHupu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		970FEB97240CD51F00F19A2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		970FEB99240CD51F00F19A2E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		970FEB99240CD51F00F19A2E /* HUPUMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUPUMainViewController.swift; sourceTree = "<group>"; };
 		970FEB9C240CD51F00F19A2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		970FEB9E240CD52000F19A2E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		970FEBA1240CD52000F19A2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		970FEBA3240CD52000F19A2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		970FEBAB240CD5C100F19A2E /* HupuPageTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HupuPageTitleView.swift; sourceTree = "<group>"; };
 		970FEBAD240CD5F300F19A2E /* HupuPageContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HupuPageContentView.swift; sourceTree = "<group>"; };
+		970FEBB1240D062500F19A2E /* HUPURecommandViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUPURecommandViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +83,8 @@
 		970FEBAA240CD58D00F19A2E /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				970FEB99240CD51F00F19A2E /* ViewController.swift */,
+				970FEB99240CD51F00F19A2E /* HUPUMainViewController.swift */,
+				970FEBB1240D062500F19A2E /* HUPURecommandViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -159,7 +162,8 @@
 			files = (
 				970FEBAC240CD5C100F19A2E /* HupuPageTitleView.swift in Sources */,
 				970FEBAE240CD5F300F19A2E /* HupuPageContentView.swift in Sources */,
-				970FEB9A240CD51F00F19A2E /* ViewController.swift in Sources */,
+				970FEBB2240D062500F19A2E /* HUPURecommandViewController.swift in Sources */,
+				970FEB9A240CD51F00F19A2E /* HUPUMainViewController.swift in Sources */,
 				970FEB98240CD51F00F19A2E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
