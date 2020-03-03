@@ -12,8 +12,8 @@
 		970FEB9D240CD51F00F19A2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 970FEB9B240CD51F00F19A2E /* Main.storyboard */; };
 		970FEB9F240CD52000F19A2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 970FEB9E240CD52000F19A2E /* Assets.xcassets */; };
 		970FEBA2240CD52000F19A2E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 970FEBA0240CD52000F19A2E /* LaunchScreen.storyboard */; };
-		970FEBAC240CD5C100F19A2E /* HupuMatchTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970FEBAB240CD5C100F19A2E /* HupuMatchTitleView.swift */; };
-		970FEBAE240CD5F300F19A2E /* HupuMatchContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970FEBAD240CD5F300F19A2E /* HupuMatchContentView.swift */; };
+		970FEBAC240CD5C100F19A2E /* HupuTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970FEBAB240CD5C100F19A2E /* HupuTitleView.swift */; };
+		970FEBAE240CD5F300F19A2E /* HupuContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970FEBAD240CD5F300F19A2E /* HupuContentView.swift */; };
 		970FEBB2240D062500F19A2E /* HUPURecommandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970FEBB1240D062500F19A2E /* HUPURecommandViewController.swift */; };
 		97343773240DF0370045CCC5 /* HUPUMatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97343772240DF0370045CCC5 /* HUPUMatchViewController.swift */; };
 		97343776240DF07B0045CCC5 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97343775240DF07B0045CCC5 /* Common.swift */; };
@@ -24,6 +24,7 @@
 		97343783240DF54E0045CCC5 /* HUPUFootballViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97343782240DF54E0045CCC5 /* HUPUFootballViewController.swift */; };
 		97343785240DF56F0045CCC5 /* HUPUFollowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97343784240DF56F0045CCC5 /* HUPUFollowViewController.swift */; };
 		97343787240DF5DD0045CCC5 /* HUPUCBAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97343786240DF5DD0045CCC5 /* HUPUCBAViewController.swift */; };
+		97343789240DFDB50045CCC5 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97343788240DFDB50045CCC5 /* UIColor+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,8 +35,8 @@
 		970FEB9E240CD52000F19A2E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		970FEBA1240CD52000F19A2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		970FEBA3240CD52000F19A2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		970FEBAB240CD5C100F19A2E /* HupuMatchTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HupuMatchTitleView.swift; sourceTree = "<group>"; };
-		970FEBAD240CD5F300F19A2E /* HupuMatchContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HupuMatchContentView.swift; sourceTree = "<group>"; };
+		970FEBAB240CD5C100F19A2E /* HupuTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HupuTitleView.swift; sourceTree = "<group>"; };
+		970FEBAD240CD5F300F19A2E /* HupuContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HupuContentView.swift; sourceTree = "<group>"; };
 		970FEBB1240D062500F19A2E /* HUPURecommandViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUPURecommandViewController.swift; sourceTree = "<group>"; };
 		97343772240DF0370045CCC5 /* HUPUMatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUPUMatchViewController.swift; sourceTree = "<group>"; };
 		97343775240DF07B0045CCC5 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
@@ -46,6 +47,7 @@
 		97343782240DF54E0045CCC5 /* HUPUFootballViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUPUFootballViewController.swift; sourceTree = "<group>"; };
 		97343784240DF56F0045CCC5 /* HUPUFollowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUPUFollowViewController.swift; sourceTree = "<group>"; };
 		97343786240DF5DD0045CCC5 /* HUPUCBAViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUPUCBAViewController.swift; sourceTree = "<group>"; };
+		97343788240DFDB50045CCC5 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,8 +120,6 @@
 		97343767240DEDD90045CCC5 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				970FEBAD240CD5F300F19A2E /* HupuMatchContentView.swift */,
-				970FEBAB240CD5C100F19A2E /* HupuMatchTitleView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -176,6 +176,8 @@
 		9734376F240DEEC50045CCC5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				970FEBAD240CD5F300F19A2E /* HupuContentView.swift */,
+				970FEBAB240CD5C100F19A2E /* HupuTitleView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -192,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				97343775240DF07B0045CCC5 /* Common.swift */,
+				97343788240DFDB50045CCC5 /* UIColor+Extension.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -291,15 +294,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				970FEBAC240CD5C100F19A2E /* HupuMatchTitleView.swift in Sources */,
+				970FEBAC240CD5C100F19A2E /* HupuTitleView.swift in Sources */,
 				97343785240DF56F0045CCC5 /* HUPUFollowViewController.swift in Sources */,
-				970FEBAE240CD5F300F19A2E /* HupuMatchContentView.swift in Sources */,
+				970FEBAE240CD5F300F19A2E /* HupuContentView.swift in Sources */,
 				97343781240DF5350045CCC5 /* HUPUNBAViewController.swift in Sources */,
 				97343773240DF0370045CCC5 /* HUPUMatchViewController.swift in Sources */,
 				9734377F240DF2600045CCC5 /* HUPUMoreViewController.swift in Sources */,
 				970FEBB2240D062500F19A2E /* HUPURecommandViewController.swift in Sources */,
 				97343787240DF5DD0045CCC5 /* HUPUCBAViewController.swift in Sources */,
 				97343783240DF54E0045CCC5 /* HUPUFootballViewController.swift in Sources */,
+				97343789240DFDB50045CCC5 /* UIColor+Extension.swift in Sources */,
 				9734377C240DF2160045CCC5 /* HUPUVedioViewController.swift in Sources */,
 				970FEB9A240CD51F00F19A2E /* HUPUMainViewController.swift in Sources */,
 				970FEB98240CD51F00F19A2E /* AppDelegate.swift in Sources */,
@@ -452,6 +456,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = VTHupu/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -469,6 +474,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = VTHupu/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

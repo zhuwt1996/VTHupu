@@ -10,6 +10,11 @@
 
 import UIKit
 
+/** 协议 */
+protocol HupuTitleViewDelegate: class {
+    func pageTitleView(titleView: HupuTitleView, selectedIndex: Int)
+}
+
 /** 指示器高度 */
 private let kScrollLineH: CGFloat = 2
 /** 未选中的字体颜色(元组类型) */
@@ -17,7 +22,7 @@ private let kNomolColor: (CGFloat, CGFloat, CGFloat) = (85, 85, 85)
 /** 选中的字体颜色(元组类型) */
 private let kSelectColor: (CGFloat, CGFloat, CGFloat) = (255, 120, 0)
 
-class HupuMatchTitleView: UIView {
+class HupuTitleView: UIView {
 
     /** 滚动视图 */
     lazy var scrollView: UIScrollView = {
@@ -43,6 +48,12 @@ class HupuMatchTitleView: UIView {
     
     /** 标题数组 */
     fileprivate var titles: [String]
+    
+    /** 当前选中label下标 */
+    fileprivate var currentIndex: Int = 0
+    
+    /** 代理属性 */
+    weak var delegate: HupuTitleViewDelegate?
     
     /** 自定义构造函数 */
     init(frame: CGRect,titles: [String]) {
@@ -89,7 +100,8 @@ class HupuMatchTitleView: UIView {
             titleLabels.append(label)
             //为label添加手势触发事件
             label.isUserInteractionEnabled = true
-            label.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(labelClicked)))
+            let gesture = UITapGestureRecognizer(target: self, action: #selector(self.labelClicked(gesture:)))
+            label.addGestureRecognizer(gesture)
         }
     }
     
@@ -111,21 +123,24 @@ class HupuMatchTitleView: UIView {
     }
     
     /** label点击事件 */
-    @objc func labelClicked(){
-        print("labelClick....")
+    @objc func labelClicked(gesture: UITapGestureRecognizer){
+        //获取到点击到label
+        guard let currentLabel = gesture.view as? UILabel else{return}
+        //获取上一点击到label，切换字体颜色
+        let oldLabel = titleLabels[currentIndex]
+        currentLabel.textColor = UIColor(r: kSelectColor.0, g: kSelectColor.1, b: kSelectColor.2)
+        oldLabel.textColor = UIColor(r: kNomolColor.0, g: kNomolColor.1, b: kNomolColor.2)
+        //保存新的下标
+        currentIndex = currentLabel.tag
+        //指示器移动
+        let scrollLineX = CGFloat(currentLabel.tag) * scollLine.frame.width
+        //动画效果
+        UIView.animate(withDuration: 0.25) {
+            self.scollLine.frame.origin.x = scrollLineX
+        }
+        //发送通知
+        delegate?.pageTitleView(titleView: self, selectedIndex: currentIndex)
     }
     
 }
 
-
-extension UIColor {
-    // convenience 扩展遍历构造函数
-    convenience init(r : CGFloat, g : CGFloat, b : CGFloat) {
-        self.init(red: r / 255.0, green: g / 255.0, blue: b / 255.0, alpha: 1.0)
-    }
-    
-    // 随机色
-    class func randomColor() -> UIColor {
-        return UIColor(r: CGFloat(arc4random_uniform(256)), g: CGFloat(arc4random_uniform(256)), b: CGFloat(arc4random_uniform(256)))
-    }
-}

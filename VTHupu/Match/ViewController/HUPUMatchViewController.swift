@@ -14,15 +14,16 @@ private let kTitleViewH : CGFloat = 40
 
 class HUPUMatchViewController: UIViewController {
 
-    fileprivate lazy var titleView: HupuMatchTitleView = {
+    fileprivate lazy var titleView: HupuTitleView = {
         let titleFrame = CGRect(x: 0, y: kStatusBarH + kNavigationBarH, width: kScreenW, height: kTitleViewH)
         let titles = ["NBA", "国际足球", "关注", "CBA"]
-        let view = HupuMatchTitleView(frame: titleFrame, titles: titles)
+        let view = HupuTitleView(frame: titleFrame, titles: titles)
+        view.delegate = self
         return view
     }()
     
     /** 内容控制器 */
-    fileprivate lazy var pageContentView: HupuMatchContentView = {
+    fileprivate lazy var contentView: HupuContentView = {
         let contentH = kScreenH - (kStatusBarH + kNavigationBarH + kTitleViewH + kTabbarH)
         let contentFrame = CGRect(x: 0, y: kStatusBarH + kNavigationBarH + kTitleViewH, width: kScreenW, height: contentH)
         // 确定所有子控制器
@@ -32,9 +33,9 @@ class HUPUMatchViewController: UIViewController {
         childVcs.append(HUPUFollowViewController())
         childVcs.append(HUPUCBAViewController())
         
-        let contentView = HupuMatchContentView(frame: contentFrame, childVcs: childVcs, parentViewcontrol: self)
-        //        contentView.delegate = self
-        return contentView
+        let contentV = HupuContentView(frame: contentFrame, childVcs: childVcs, parentViewcontrol: self)
+        contentV.delegate = self
+        return contentV
     }()
     
     override func viewDidLoad() {
@@ -44,8 +45,33 @@ class HUPUMatchViewController: UIViewController {
     }
     
     func setupUI(){
+        // 设置导航栏
+        setupNavigationBar()
+        // 0.取消系统调整scrollView的内边距
+        automaticallyAdjustsScrollViewInsets = false
+        
         view.addSubview(titleView)
-        view.addSubview(pageContentView)
+        view.addSubview(contentView)
+    }
+    
+    fileprivate func setupNavigationBar(){
+        
     }
 
+}
+
+// MARK:- HupuTitleViewDelegate 点击了label需要同步content的变化
+extension HUPUMatchViewController: HupuTitleViewDelegate{
+
+    func pageTitleView(titleView: HupuTitleView, selectedIndex: Int) {
+
+    }
+}
+
+// MARK:- HupuContentViewDelegate 点击了content需要同步label的变化
+extension HUPUMatchViewController: HupuContentViewDelegate{
+    
+    func pageContentView(titleView: HupuContentView, selectedIndex: Int) {
+        
+    }
 }

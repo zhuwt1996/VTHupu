@@ -26,7 +26,7 @@ class HUPUMainViewController: UITabBarController {
         let item3 : UITabBarItem = UITabBarItem (title: "社区", image: UIImage(named: "me"), selectedImage: UIImage(named: "me_1"))
         v3.tabBarItem = item3
         
-        let v4 = HUPURecommandViewController()
+        let v4 = HUPUVedioViewController()
         let item4 : UITabBarItem = UITabBarItem (title: "视频", image: UIImage(named: "me"), selectedImage: UIImage(named: "me_1"))
         v4.tabBarItem = item4
         
