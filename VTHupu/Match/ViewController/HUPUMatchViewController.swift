@@ -64,14 +64,17 @@ class HUPUMatchViewController: UIViewController {
 extension HUPUMatchViewController: HupuTitleViewDelegate{
 
     func pageTitleView(titleView: HupuTitleView, selectedIndex: Int) {
-
+        
+        contentView.fitUIWithProcess(currentIndex: selectedIndex)
     }
 }
 
 // MARK:- HupuContentViewDelegate 点击了content需要同步label的变化
 extension HUPUMatchViewController: HupuContentViewDelegate{
     
-    func pageContentView(titleView: HupuContentView, selectedIndex: Int) {
+    func pageContentView(contentView: HupuContentView, progress: CGFloat, sourceIndex: Int, targetIndex: Int) {
         
+        titleView.fitUIWithProcess(progress: progress, sourceIndex: sourceIndex, targetIndex: targetIndex)
     }
+    
 }

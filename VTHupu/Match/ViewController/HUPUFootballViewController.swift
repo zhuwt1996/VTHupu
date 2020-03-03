@@ -10,21 +10,18 @@ import UIKit
 
 class HUPUFootballViewController: UIViewController {
 
+    fileprivate lazy var label: UILabel = {
+        let label = UILabel()
+        label.text = "国际足球"
+        label.font = UIFont.systemFont(ofSize: 50)
+        label.textColor = UIColor.red
+        label.textAlignment = .center
+        label.frame = CGRect(x: 0, y: 250, width: kScreenW, height: 50)
+        return label
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        view.addSubview(label)
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

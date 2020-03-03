@@ -26,6 +26,4 @@ class HUPUNBAViewController: UIViewController {
         view.addSubview(label)
     }
     
-    
-
 }

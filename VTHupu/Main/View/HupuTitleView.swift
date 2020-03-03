@@ -142,5 +142,26 @@ class HupuTitleView: UIView {
         delegate?.pageTitleView(titleView: self, selectedIndex: currentIndex)
     }
     
+    
+    // MARK:- 根据内容改标标题标签
+    func fitUIWithProcess(progress: CGFloat, sourceIndex: Int, targetIndex: Int){
+        //取出sourcelabel和targetlabel，分别改变颜色
+        let sourceLabel = titleLabels[sourceIndex]
+        let targetLabel = titleLabels[targetIndex]
+        
+        // 取出变化的范围
+        let colorDelte = (kSelectColor.0 - kNomolColor.0, kSelectColor.1 - kNomolColor.1, kSelectColor.2 - kNomolColor.2)
+        sourceLabel.textColor = UIColor(r: kSelectColor.0 - colorDelte.0 * progress, g: kSelectColor.1 - colorDelte.1 * progress, b: kSelectColor.2 - colorDelte.2 * progress)
+        targetLabel.textColor = UIColor(r: kNomolColor.0 + colorDelte.0 * progress, g: kNomolColor.1 + colorDelte.1 * progress, b: kNomolColor.2 + colorDelte.2 * progress)
+        
+        //滑动滑块
+        let moveTotalX = targetLabel.frame.origin.x - sourceLabel.frame.origin.x
+        let moveX = moveTotalX * progress
+        scollLine.frame.origin.x = sourceLabel.frame.origin.x + moveX
+        
+        // 记录最新的Index(否则会出现bug）
+        currentIndex = targetIndex
+    }
+    
 }
 
