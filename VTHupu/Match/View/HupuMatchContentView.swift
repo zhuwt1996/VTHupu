@@ -10,7 +10,7 @@
 
 import UIKit
 
-class HupuPageContentView: UIView {
+class HupuMatchContentView: UIView {
 
     /** 控制器数组 */
     fileprivate var childVcs: [UIViewController]
@@ -56,7 +56,7 @@ class HupuPageContentView: UIView {
 }
 
 // MARK:- UICollectionViewDataSource, UICollectionViewDelegate
-extension HupuPageContentView: UICollectionViewDataSource, UICollectionViewDelegate{
+extension HupuMatchContentView: UICollectionViewDataSource, UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return childVcs.count
     }

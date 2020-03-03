@@ -1,18 +1,19 @@
 //
-//  HUPURecommandViewController.swift
+//  HUPUNBAViewController.swift
 //  VTHupu
 //
-//  Created by ZWT on 2020/3/2.
+//  Created by ZWT on 2020/3/3.
 //  Copyright © 2020 ZWT. All rights reserved.
 //
 
 import UIKit
 
-class HUPURecommandViewController: UIViewController {
+class HUPUNBAViewController: UIViewController {
 
+    
     fileprivate lazy var label: UILabel = {
         let label = UILabel()
-        label.text = "1"
+        label.text = "nba"
         label.font = UIFont.systemFont(ofSize: 50)
         label.textColor = UIColor.red
         label.textAlignment = .center
@@ -22,9 +23,9 @@ class HUPURecommandViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        view.backgroundColor = UIColor.white
         view.addSubview(label)
     }
     
+    
+
 }

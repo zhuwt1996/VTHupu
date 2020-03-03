@@ -17,7 +17,7 @@ private let kNomolColor: (CGFloat, CGFloat, CGFloat) = (85, 85, 85)
 /** 选中的字体颜色(元组类型) */
 private let kSelectColor: (CGFloat, CGFloat, CGFloat) = (255, 120, 0)
 
-class HupuPageTitleView: UIView {
+class HupuMatchTitleView: UIView {
 
     /** 滚动视图 */
     lazy var scrollView: UIScrollView = {
