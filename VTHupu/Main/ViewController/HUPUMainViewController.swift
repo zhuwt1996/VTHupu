@@ -15,19 +15,19 @@ class HUPUMainViewController: UITabBarController {
         super.viewDidLoad()
         
         let v1  = HUPURecommandViewController()
-        let item1 : UITabBarItem = UITabBarItem (title: "推荐", image: UIImage(named: "home"), selectedImage: UIImage(named: "home_1"))
+        let item1 : UITabBarItem = UITabBarItem (title: "推荐", image: UIImage(named: "reconmand.png"), selectedImage: UIImage(named: "reconmand_1"))
         v1.tabBarItem = item1
         
         let v2 = HUPUMatchViewController()
-        let item2 : UITabBarItem = UITabBarItem (title: "赛事", image: UIImage(named: "favor"), selectedImage: UIImage(named: "favor_1"))
+        let item2 : UITabBarItem = UITabBarItem (title: "赛事", image: UIImage(named: "game.png"), selectedImage: UIImage(named: "game_1.png"))
         v2.tabBarItem = item2
         
         let v3 = HUPUCommunityViewController()
-        let item3 : UITabBarItem = UITabBarItem (title: "社区", image: UIImage(named: "me"), selectedImage: UIImage(named: "me_1"))
+        let item3 : UITabBarItem = UITabBarItem (title: "社区", image: UIImage(named: "community"), selectedImage: UIImage(named: "community_1"))
         v3.tabBarItem = item3
         
         let v4 = HUPUVedioViewController()
-        let item4 : UITabBarItem = UITabBarItem (title: "视频", image: UIImage(named: "me"), selectedImage: UIImage(named: "me_1"))
+        let item4 : UITabBarItem = UITabBarItem (title: "视频", image: UIImage(named: "vedio"), selectedImage: UIImage(named: "vedio_1"))
         v4.tabBarItem = item4
         
         let v5 = HUPUMoreViewController()
@@ -39,6 +39,8 @@ class HUPUMainViewController: UITabBarController {
         
         //默认选中“赛事”
         self.selectedIndex = 1
+        
+        tabBar.tintColor = UIColor.red
     }
 
 }
