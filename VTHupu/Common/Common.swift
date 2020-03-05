@@ -19,3 +19,9 @@ let kTabbarH : CGFloat = 44
 let kScreenW = UIScreen.main.bounds.width
 /** 屏幕的高度 */
 let kScreenH = UIScreen.main.bounds.height
+/** 未选中的字体颜色(元组类型) */
+let kNomolColor: (CGFloat, CGFloat, CGFloat) = (85, 85, 85)
+/** 选中的字体颜色(元组类型) */
+let kSelectColor: (CGFloat, CGFloat, CGFloat) = (255, 53, 53)
+/** 指示器高度 */
+let kScrollLineH: CGFloat = 2

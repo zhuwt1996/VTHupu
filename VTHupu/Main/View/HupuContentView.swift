@@ -12,10 +12,10 @@ import UIKit
 
 /** 协议 */
 protocol HupuContentViewDelegate: class {
-    func pageContentView(contentView: HupuContentView, progress: CGFloat, sourceIndex: Int, targetIndex: Int)
+    func hupuContentView(contentView: HupuContentView, progress: CGFloat, sourceIndex: Int, targetIndex: Int)
 }
 
-fileprivate let contentReuseIdentifier = "HUPUContentView"
+private let contentReuseIdentifier = "HUPUContentView"
 
 class HupuContentView: UIView {
 
@@ -135,12 +135,12 @@ extension HupuContentView: UICollectionViewDataSource, UICollectionViewDelegate{
                 sourceIndex = childVcs.count - 1
             }
         }
-        delegate?.pageContentView(contentView: self, progress: progress, sourceIndex: sourceIndex, targetIndex: targetIndex)
+        delegate?.hupuContentView(contentView: self, progress: progress, sourceIndex: sourceIndex, targetIndex: targetIndex)
     }
     
     
     // MARK:- 根据标题标签改变内容
-    func fitUIWithProcess(currentIndex: Int){
+    func fitContentUIWithProcess(currentIndex: Int){
         // 记录需要禁止
         isForbidScorllDelegate = true
         // 滚到正确位置

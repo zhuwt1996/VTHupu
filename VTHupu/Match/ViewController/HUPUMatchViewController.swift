@@ -13,68 +13,100 @@ import UIKit
 private let kTitleViewH : CGFloat = 40
 
 class HUPUMatchViewController: UIViewController {
+    
+    private let titles = ["NBA","国际足球","关注","CBA","中国足球","数码","王者荣耀"]
+    
+    private let controllers = [HUPUNBAViewController(),HUPUFollowViewController(),HUPUFollowViewController(),HUPUCBAViewController(),HUPUFootballViewController(),HUPUFollowViewController(),HUPUFollowViewController()]
+    
 
-    fileprivate lazy var titleView: HupuTitleView = {
-        let titleFrame = CGRect(x: 0, y: kStatusBarH + kNavigationBarH, width: kScreenW, height: kTitleViewH)
-        let titles = ["NBA", "国际足球", "关注", "CBA"]
-        let view = HupuTitleView(frame: titleFrame, titles: titles)
-        view.delegate = self
+    lazy var matchTitleMenu: CKSlideMenu = {
+        let menu = CKSlideMenu(frame: CGRect(x:0,y:64,width:view.frame.width - 60,height:40), titles: titles, childControllers: controllers)
+        //内容的frame
+        menu.bodyFrame = CGRect.init(x: 0, y: 104, width: view.frame.width, height: view.frame.height - 104)
+        //隐藏分割线
+        menu.isLineHidden = true
+        //指示器的样式
+        menu.indicatorStyle = SlideMenuIndicatorStyle.followText
+        //默认选中第一个
+        menu.scrollToIndex(0)
+        //选中放大标题
+        menu.titleStyle = .transfrom
+        menu.unSelectedColor = UIColor.gray
+        menu.isIndicatorHidden = true
+        menu.selectedColor = UIColor.black
+        menu.font = UIFont.systemFont(ofSize: 16)
+        return menu
+    }()
+    
+    lazy var hupuImg: UIImageView = {
+        let img = UIImageView(frame: CGRect(x: 5, y: 20, width: 65, height: 60))
+        img.image = UIImage(named: "hupu")
+        return img
+    }()
+    
+    
+    
+    lazy var publishImg: UIImageView = {
+        let img = UIImageView(frame: CGRect(x: kScreenW - 30, y: 40, width: 20, height: 20))
+        img.image = UIImage(named: "publish")
+        return img
+    }()
+    
+    lazy var publishLab: UILabel = {
+        let lab = UILabel(frame: CGRect(x: kScreenW - 30, y: 60, width: 20, height: 10))
+        lab.text = "发布"
+        lab.textColor = UIColor.gray
+        lab.font = UIFont.systemFont(ofSize: 8)
+        return lab
+    }()
+    
+    lazy var channelView: UIView = {
+        let view = UIView(frame: CGRect(x: kScreenW - 60, y: 64, width: 60, height: 35))
+        view.isUserInteractionEnabled = true
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(changeChannel)))
         return view
     }()
     
-    /** 内容控制器 */
-    fileprivate lazy var contentView: HupuContentView = {
-        let contentH = kScreenH - (kStatusBarH + kNavigationBarH + kTitleViewH + kTabbarH)
-        let contentFrame = CGRect(x: 0, y: kStatusBarH + kNavigationBarH + kTitleViewH, width: kScreenW, height: contentH)
-        // 确定所有子控制器
-        var childVcs = [UIViewController]()
-        childVcs.append(HUPUNBAViewController())
-        childVcs.append(HUPUFootballViewController())
-        childVcs.append(HUPUFollowViewController())
-        childVcs.append(HUPUCBAViewController())
-        
-        let contentV = HupuContentView(frame: contentFrame, childVcs: childVcs, parentViewcontrol: self)
-        contentV.delegate = self
-        return contentV
+    lazy var channelLab: UILabel = {
+        let lab = UILabel(frame: CGRect(x: 12, y: 2, width: 35, height: 35))
+        lab.text = "频道"
+        lab.textColor = UIColor.black
+        lab.font = UIFont.systemFont(ofSize: 16)
+        return lab
+    }()
+    
+    lazy var channelImg: UIImageView = {
+        let img = UIImageView(frame: CGRect(x: 45, y: 10, width: 10, height: 20))
+        img.image = UIImage(named: "channel")
+        return img
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
+        view.isUserInteractionEnabled = true
         setupUI()
     }
     
     func setupUI(){
         // 设置导航栏
         setupNavigationBar()
-        // 0.取消系统调整scrollView的内边距
-        automaticallyAdjustsScrollViewInsets = false
-        
-        view.addSubview(titleView)
-        view.addSubview(contentView)
+        view.addSubview(matchTitleMenu)
     }
     
     fileprivate func setupNavigationBar(){
+        view.addSubview(hupuImg)
         
-    }
-
-}
-
-// MARK:- HupuTitleViewDelegate 点击了label需要同步content的变化
-extension HUPUMatchViewController: HupuTitleViewDelegate{
-
-    func pageTitleView(titleView: HupuTitleView, selectedIndex: Int) {
+        view.addSubview(publishImg)
+        view.addSubview(publishLab)
         
-        contentView.fitUIWithProcess(currentIndex: selectedIndex)
-    }
-}
-
-// MARK:- HupuContentViewDelegate 点击了content需要同步label的变化
-extension HUPUMatchViewController: HupuContentViewDelegate{
-    
-    func pageContentView(contentView: HupuContentView, progress: CGFloat, sourceIndex: Int, targetIndex: Int) {
-        
-        titleView.fitUIWithProcess(progress: progress, sourceIndex: sourceIndex, targetIndex: targetIndex)
+        channelView.addSubview(channelLab)
+        channelView.addSubview(channelImg)
+        view.addSubview(channelView)
     }
     
+    @objc func changeChannel(){
+        print("change...")
+    }
+
 }

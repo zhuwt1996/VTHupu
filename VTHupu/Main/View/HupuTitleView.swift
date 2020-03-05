@@ -6,21 +6,15 @@
 //  Copyright © 2020 ZWT. All rights reserved.
 //
 
-// MARK:- 页面标题试图
+// MARK:- 顶部标签栏，不可滑动，点击切换
 
 import UIKit
 
 /** 协议 */
 protocol HupuTitleViewDelegate: class {
-    func pageTitleView(titleView: HupuTitleView, selectedIndex: Int)
+    func hupuTitleView(titleView: HupuTitleView, selectedIndex: Int)
 }
 
-/** 指示器高度 */
-private let kScrollLineH: CGFloat = 2
-/** 未选中的字体颜色(元组类型) */
-private let kNomolColor: (CGFloat, CGFloat, CGFloat) = (85, 85, 85)
-/** 选中的字体颜色(元组类型) */
-private let kSelectColor: (CGFloat, CGFloat, CGFloat) = (255, 120, 0)
 
 class HupuTitleView: UIView {
 
@@ -39,7 +33,7 @@ class HupuTitleView: UIView {
     /** 滑动指示器 */
     fileprivate lazy var scollLine: UIView = {
         let scollLine = UIView()
-        scollLine.backgroundColor = UIColor.orange
+        scollLine.backgroundColor = UIColor(r: kSelectColor.0, g: kSelectColor.1, b: kSelectColor.2)
         return scollLine
     }()
     
@@ -139,7 +133,7 @@ class HupuTitleView: UIView {
             self.scollLine.frame.origin.x = scrollLineX
         }
         //发送通知
-        delegate?.pageTitleView(titleView: self, selectedIndex: currentIndex)
+        delegate?.hupuTitleView(titleView: self, selectedIndex: currentIndex)
     }
     
     
