@@ -16,6 +16,10 @@ class HUPUMatchViewController: UIViewController {
     
     private let titles = ["NBA","国际足球","关注","CBA","中国足球","数码","王者荣耀"]
     
+    private let publishTitles = ["发图文","发视频"]
+    
+    private let publishIcons = ["pic","vcd"]
+    
     private let controllers = [HUPUNBAViewController(),HUPUFollowViewController(),HUPUFollowViewController(),HUPUCBAViewController(),HUPUFootballViewController(),HUPUFollowViewController(),HUPUFollowViewController()]
     
 
@@ -44,16 +48,22 @@ class HUPUMatchViewController: UIViewController {
         return img
     }()
     
-    
+    lazy var publishView: UIView = {
+        let view = UIView(frame: CGRect(x: kScreenW - 30, y: 20, width: 30, height: 45))
+        view.isUserInteractionEnabled = true
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(publish)))
+        return view
+    }()
     
     lazy var publishImg: UIImageView = {
-        let img = UIImageView(frame: CGRect(x: kScreenW - 30, y: 40, width: 20, height: 20))
+        let img = UIImageView(frame: CGRect(x: 0, y: 20, width: 20, height: 20))
         img.image = UIImage(named: "publish")
+        
         return img
     }()
     
     lazy var publishLab: UILabel = {
-        let lab = UILabel(frame: CGRect(x: kScreenW - 30, y: 60, width: 20, height: 10))
+        let lab = UILabel(frame: CGRect(x: 0, y: 40, width: 30, height: 10))
         lab.text = "发布"
         lab.textColor = UIColor.gray
         lab.font = UIFont.systemFont(ofSize: 8)
@@ -84,7 +94,7 @@ class HUPUMatchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
-        view.isUserInteractionEnabled = true
+        
         setupUI()
     }
     
@@ -97,13 +107,34 @@ class HUPUMatchViewController: UIViewController {
     fileprivate func setupNavigationBar(){
         view.addSubview(hupuImg)
         
-        view.addSubview(publishImg)
-        view.addSubview(publishLab)
+        publishView.addSubview(publishImg)
+        publishView.addSubview(publishLab)
+        view.addSubview(publishView)
         
         channelView.addSubview(channelLab)
         channelView.addSubview(channelImg)
         view.addSubview(channelView)
     }
+    
+    @objc func publish(){
+        PopupMenu.showRelyOnView(view: publishImg, titles: publishTitles, icons: publishIcons, menuWidth: 115, didSelectRow: { (index, value, menu) in
+            if index == 0{
+                print("发图文")
+            }else if index == 1{
+                print("发视频")
+            }
+        }) { (menu) in
+            menu.backColor = UIColor.white
+            menu.separatorColor = UIColor.gray
+            menu.priorityDirection = PopupMenuPriorityDirection.top
+            menu.borderWidth = 1
+            menu.borderColor = UIColor.clear
+            menu.arrowDirection = .left
+            menu.cornerRadius = 10.0
+            menu.rectCorner = [.topLeft,.topRight,.bottomRight,.bottomLeft]
+        }
+    }
+    
     
     @objc func changeChannel(){
         print("change...")

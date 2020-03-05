@@ -16,6 +16,10 @@
 		970FEBAE240CD5F300F19A2E /* HupuContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970FEBAD240CD5F300F19A2E /* HupuContentView.swift */; };
 		970FEBB2240D062500F19A2E /* HUPURecommandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970FEBB1240D062500F19A2E /* HUPURecommandViewController.swift */; };
 		9716CF772410A1AB00FB971F /* CKSlideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9716CF762410A1AB00FB971F /* CKSlideMenu.swift */; };
+		9716CF7D2410EEAC00FB971F /* PopupMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9716CF792410EEAB00FB971F /* PopupMenuCell.swift */; };
+		9716CF7E2410EEAC00FB971F /* PopupMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9716CF7A2410EEAB00FB971F /* PopupMenu.swift */; };
+		9716CF7F2410EEAC00FB971F /* RectConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9716CF7B2410EEAB00FB971F /* RectConst.swift */; };
+		9716CF802410EEAC00FB971F /* PopupMenuPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9716CF7C2410EEAB00FB971F /* PopupMenuPath.swift */; };
 		97343773240DF0370045CCC5 /* HUPUMatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97343772240DF0370045CCC5 /* HUPUMatchViewController.swift */; };
 		97343776240DF07B0045CCC5 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97343775240DF07B0045CCC5 /* Common.swift */; };
 		97343779240DF1D50045CCC5 /* HUPUCommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97343778240DF1D50045CCC5 /* HUPUCommunityViewController.swift */; };
@@ -40,6 +44,10 @@
 		970FEBAD240CD5F300F19A2E /* HupuContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HupuContentView.swift; sourceTree = "<group>"; };
 		970FEBB1240D062500F19A2E /* HUPURecommandViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUPURecommandViewController.swift; sourceTree = "<group>"; };
 		9716CF762410A1AB00FB971F /* CKSlideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CKSlideMenu.swift; sourceTree = "<group>"; };
+		9716CF792410EEAB00FB971F /* PopupMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupMenuCell.swift; sourceTree = "<group>"; };
+		9716CF7A2410EEAB00FB971F /* PopupMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupMenu.swift; sourceTree = "<group>"; };
+		9716CF7B2410EEAB00FB971F /* RectConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RectConst.swift; sourceTree = "<group>"; };
+		9716CF7C2410EEAB00FB971F /* PopupMenuPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupMenuPath.swift; sourceTree = "<group>"; };
 		97343772240DF0370045CCC5 /* HUPUMatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUPUMatchViewController.swift; sourceTree = "<group>"; };
 		97343775240DF07B0045CCC5 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		97343778240DF1D50045CCC5 /* HUPUCommunityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUPUCommunityViewController.swift; sourceTree = "<group>"; };
@@ -102,9 +110,21 @@
 		9716CF752410A18900FB971F /* ThirdLib */ = {
 			isa = PBXGroup;
 			children = (
+				9716CF782410EEAB00FB971F /* PopupMenu */,
 				9716CF762410A1AB00FB971F /* CKSlideMenu.swift */,
 			);
 			path = ThirdLib;
+			sourceTree = "<group>";
+		};
+		9716CF782410EEAB00FB971F /* PopupMenu */ = {
+			isa = PBXGroup;
+			children = (
+				9716CF792410EEAB00FB971F /* PopupMenuCell.swift */,
+				9716CF7A2410EEAB00FB971F /* PopupMenu.swift */,
+				9716CF7B2410EEAB00FB971F /* RectConst.swift */,
+				9716CF7C2410EEAB00FB971F /* PopupMenuPath.swift */,
+			);
+			path = PopupMenu;
 			sourceTree = "<group>";
 		};
 		97343765240DED560045CCC5 /* Match */ = {
@@ -299,16 +319,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				9716CF772410A1AB00FB971F /* CKSlideMenu.swift in Sources */,
+				9716CF7E2410EEAC00FB971F /* PopupMenu.swift in Sources */,
 				970FEBAC240CD5C100F19A2E /* HupuTitleView.swift in Sources */,
 				97343785240DF56F0045CCC5 /* HUPUFollowViewController.swift in Sources */,
 				970FEBAE240CD5F300F19A2E /* HupuContentView.swift in Sources */,
+				9716CF802410EEAC00FB971F /* PopupMenuPath.swift in Sources */,
 				97343781240DF5350045CCC5 /* HUPUNBAViewController.swift in Sources */,
 				97343773240DF0370045CCC5 /* HUPUMatchViewController.swift in Sources */,
 				9734377F240DF2600045CCC5 /* HUPUMoreViewController.swift in Sources */,
 				970FEBB2240D062500F19A2E /* HUPURecommandViewController.swift in Sources */,
 				97343787240DF5DD0045CCC5 /* HUPUCBAViewController.swift in Sources */,
 				97343783240DF54E0045CCC5 /* HUPUFootballViewController.swift in Sources */,
+				9716CF7F2410EEAC00FB971F /* RectConst.swift in Sources */,
 				97343789240DFDB50045CCC5 /* UIColor+Extension.swift in Sources */,
+				9716CF7D2410EEAC00FB971F /* PopupMenuCell.swift in Sources */,
 				9734377C240DF2160045CCC5 /* HUPUVedioViewController.swift in Sources */,
 				970FEB9A240CD51F00F19A2E /* HUPUMainViewController.swift in Sources */,
 				97A2261B240F49CF00223293 /* HupuSlideView.swift in Sources */,
