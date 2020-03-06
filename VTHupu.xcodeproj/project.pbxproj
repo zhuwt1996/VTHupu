@@ -31,6 +31,11 @@
 		97343787240DF5DD0045CCC5 /* HUPUCBAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97343786240DF5DD0045CCC5 /* HUPUCBAViewController.swift */; };
 		97343789240DFDB50045CCC5 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97343788240DFDB50045CCC5 /* UIColor+Extension.swift */; };
 		97A2261B240F49CF00223293 /* HupuSlideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A2261A240F49CF00223293 /* HupuSlideView.swift */; };
+		97EE42F3241222C000084584 /* CommunityFollowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EE42F2241222C000084584 /* CommunityFollowViewController.swift */; };
+		97EE42F5241222E300084584 /* CommunityTopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EE42F4241222E300084584 /* CommunityTopicViewController.swift */; };
+		97EE42F724122C6700084584 /* CommunityTopicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EE42F624122C6700084584 /* CommunityTopicModel.swift */; };
+		97EE42FA2412345A00084584 /* CommunityTopicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EE42F92412345A00084584 /* CommunityTopicCell.swift */; };
+		97EE42FD2412356500084584 /* CommunityCatageryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EE42FC2412356500084584 /* CommunityCatageryCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +64,11 @@
 		97343786240DF5DD0045CCC5 /* HUPUCBAViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUPUCBAViewController.swift; sourceTree = "<group>"; };
 		97343788240DFDB50045CCC5 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		97A2261A240F49CF00223293 /* HupuSlideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HupuSlideView.swift; sourceTree = "<group>"; };
+		97EE42F2241222C000084584 /* CommunityFollowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityFollowViewController.swift; sourceTree = "<group>"; };
+		97EE42F4241222E300084584 /* CommunityTopicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityTopicViewController.swift; sourceTree = "<group>"; };
+		97EE42F624122C6700084584 /* CommunityTopicModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityTopicModel.swift; sourceTree = "<group>"; };
+		97EE42F92412345A00084584 /* CommunityTopicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityTopicCell.swift; sourceTree = "<group>"; };
+		97EE42FC2412356500084584 /* CommunityCatageryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityCatageryCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +177,8 @@
 		9734376A240DEE5B0045CCC5 /* Community */ = {
 			isa = PBXGroup;
 			children = (
+				97EE42FB2412345F00084584 /* View */,
+				97EE42F824122C6C00084584 /* Model */,
 				97343777240DF1B90045CCC5 /* ViewController */,
 			);
 			path = Community;
@@ -227,6 +239,8 @@
 			isa = PBXGroup;
 			children = (
 				97343778240DF1D50045CCC5 /* HUPUCommunityViewController.swift */,
+				97EE42F2241222C000084584 /* CommunityFollowViewController.swift */,
+				97EE42F4241222E300084584 /* CommunityTopicViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -245,6 +259,23 @@
 				9734377E240DF2600045CCC5 /* HUPUMoreViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		97EE42F824122C6C00084584 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				97EE42F624122C6700084584 /* CommunityTopicModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		97EE42FB2412345F00084584 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				97EE42F92412345A00084584 /* CommunityTopicCell.swift */,
+				97EE42FC2412356500084584 /* CommunityCatageryCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -324,18 +355,23 @@
 				97343785240DF56F0045CCC5 /* HUPUFollowViewController.swift in Sources */,
 				970FEBAE240CD5F300F19A2E /* HupuContentView.swift in Sources */,
 				9716CF802410EEAC00FB971F /* PopupMenuPath.swift in Sources */,
+				97EE42F724122C6700084584 /* CommunityTopicModel.swift in Sources */,
 				97343781240DF5350045CCC5 /* HUPUNBAViewController.swift in Sources */,
+				97EE42F3241222C000084584 /* CommunityFollowViewController.swift in Sources */,
+				97EE42FD2412356500084584 /* CommunityCatageryCell.swift in Sources */,
 				97343773240DF0370045CCC5 /* HUPUMatchViewController.swift in Sources */,
 				9734377F240DF2600045CCC5 /* HUPUMoreViewController.swift in Sources */,
 				970FEBB2240D062500F19A2E /* HUPURecommandViewController.swift in Sources */,
 				97343787240DF5DD0045CCC5 /* HUPUCBAViewController.swift in Sources */,
 				97343783240DF54E0045CCC5 /* HUPUFootballViewController.swift in Sources */,
 				9716CF7F2410EEAC00FB971F /* RectConst.swift in Sources */,
+				97EE42F5241222E300084584 /* CommunityTopicViewController.swift in Sources */,
 				97343789240DFDB50045CCC5 /* UIColor+Extension.swift in Sources */,
 				9716CF7D2410EEAC00FB971F /* PopupMenuCell.swift in Sources */,
 				9734377C240DF2160045CCC5 /* HUPUVedioViewController.swift in Sources */,
 				970FEB9A240CD51F00F19A2E /* HUPUMainViewController.swift in Sources */,
 				97A2261B240F49CF00223293 /* HupuSlideView.swift in Sources */,
+				97EE42FA2412345A00084584 /* CommunityTopicCell.swift in Sources */,
 				970FEB98240CD51F00F19A2E /* AppDelegate.swift in Sources */,
 				97343779240DF1D50045CCC5 /* HUPUCommunityViewController.swift in Sources */,
 				97343776240DF07B0045CCC5 /* Common.swift in Sources */,
