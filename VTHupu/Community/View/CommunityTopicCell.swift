@@ -19,12 +19,12 @@ class CommunityTopicCell: UICollectionViewCell {
         super.init(frame: frame)
         
         //初始化产品图片视图
-        pictureView.frame = CGRect(x: 15, y: 8, width: 45, height: 45)
+        pictureView.frame = CGRect(x: 15, y: 15, width: 45, height: 45)
         pictureView.contentMode = .scaleAspectFit
         contentView.addSubview(pictureView)
         
         //初始化标题文本标签
-        titleLabel.frame = CGRect.init(x: 15, y: 55,width: 45, height: 20)
+        titleLabel.frame = CGRect.init(x: 15, y: 62,width: 45, height: 20)
         titleLabel.font = UIFont.systemFont(ofSize: 12)
         titleLabel.textAlignment = .center
         contentView.addSubview(titleLabel)

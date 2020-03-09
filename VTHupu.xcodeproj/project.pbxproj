@@ -30,6 +30,7 @@
 		97343785240DF56F0045CCC5 /* HUPUFollowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97343784240DF56F0045CCC5 /* HUPUFollowViewController.swift */; };
 		97343787240DF5DD0045CCC5 /* HUPUCBAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97343786240DF5DD0045CCC5 /* HUPUCBAViewController.swift */; };
 		97343789240DFDB50045CCC5 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97343788240DFDB50045CCC5 /* UIColor+Extension.swift */; };
+		973D843B2415E0650024702C /* CommunityTopicHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973D843A2415E0650024702C /* CommunityTopicHeader.swift */; };
 		97A2261B240F49CF00223293 /* HupuSlideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A2261A240F49CF00223293 /* HupuSlideView.swift */; };
 		97EE42F3241222C000084584 /* CommunityFollowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EE42F2241222C000084584 /* CommunityFollowViewController.swift */; };
 		97EE42F5241222E300084584 /* CommunityTopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EE42F4241222E300084584 /* CommunityTopicViewController.swift */; };
@@ -63,6 +64,7 @@
 		97343784240DF56F0045CCC5 /* HUPUFollowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUPUFollowViewController.swift; sourceTree = "<group>"; };
 		97343786240DF5DD0045CCC5 /* HUPUCBAViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUPUCBAViewController.swift; sourceTree = "<group>"; };
 		97343788240DFDB50045CCC5 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		973D843A2415E0650024702C /* CommunityTopicHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityTopicHeader.swift; sourceTree = "<group>"; };
 		97A2261A240F49CF00223293 /* HupuSlideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HupuSlideView.swift; sourceTree = "<group>"; };
 		97EE42F2241222C000084584 /* CommunityFollowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityFollowViewController.swift; sourceTree = "<group>"; };
 		97EE42F4241222E300084584 /* CommunityTopicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityTopicViewController.swift; sourceTree = "<group>"; };
@@ -274,6 +276,7 @@
 			children = (
 				97EE42F92412345A00084584 /* CommunityTopicCell.swift */,
 				97EE42FC2412356500084584 /* CommunityCatageryCell.swift */,
+				973D843A2415E0650024702C /* CommunityTopicHeader.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 				97343787240DF5DD0045CCC5 /* HUPUCBAViewController.swift in Sources */,
 				97343783240DF54E0045CCC5 /* HUPUFootballViewController.swift in Sources */,
 				9716CF7F2410EEAC00FB971F /* RectConst.swift in Sources */,
+				973D843B2415E0650024702C /* CommunityTopicHeader.swift in Sources */,
 				97EE42F5241222E300084584 /* CommunityTopicViewController.swift in Sources */,
 				97343789240DFDB50045CCC5 /* UIColor+Extension.swift in Sources */,
 				9716CF7D2410EEAC00FB971F /* PopupMenuCell.swift in Sources */,

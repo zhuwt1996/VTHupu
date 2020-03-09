@@ -11,10 +11,14 @@ import UIKit
 
 class CommunityTopicViewController: UIViewController {
 
-    //左侧tableView数据
+    /** 左侧tableView数据 */
     var tableViewData = [String]()
-    //右侧collectionView数据
+    /** 右侧collectionView数据 */
     var collectionViewData = [[CommunityTopicModel]]()
+    /** 右侧collectionView当前是否正在向下滚动（即true表示手指向上滑动，查看下面内容） */
+    var collectionViewIsScrollDown = true
+    /** 右侧collectionView垂直偏移量 */
+    var collectionViewLastOffsetY : CGFloat = 0.0
     
     /** 左侧tableview */
     lazy var tableView: UITableView = {
@@ -36,8 +40,10 @@ class CommunityTopicViewController: UIViewController {
         layout.minimumLineSpacing = 2
         layout.minimumInteritemSpacing = 2
         let itemWidth = (kScreenW - 90 - 4 - 4) / 3
-        layout.itemSize = CGSize(width: itemWidth,
-                                     height: itemWidth)
+        layout.itemSize = CGSize(width: itemWidth,height: itemWidth)
+        
+        //分组头悬停
+        layout.sectionHeadersPinToVisibleBounds = true
         return layout
     }()
     
@@ -48,6 +54,9 @@ class CommunityTopicViewController: UIViewController {
         view.dataSource = self
         view.backgroundColor = UIColor.clear
         view.register(CommunityTopicCell.self,forCellWithReuseIdentifier: "collectionViewCell")
+        view.register(CommunityTopicHeader.self,
+                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+                                withReuseIdentifier: "collectionViewHeader")
         return view
     }()
     
@@ -57,12 +66,7 @@ class CommunityTopicViewController: UIViewController {
         //初始化左侧表格数据
         self.tableViewData = ["NBA","国际足球","游戏","综合体育"]
         //初始化右侧表格数据
-        self.collectionViewData = [
-            [CommunityTopicModel(name: "76人", picture: "76ers"),CommunityTopicModel(name: "灰熊", picture: "bear"),CommunityTopicModel(name: "雄鹿", picture: "buck"),CommunityTopicModel(name: "快船", picture: "clipper"),CommunityTopicModel(name: "小牛", picture: "cow"),CommunityTopicModel(name: "尼克斯", picture: "knicks"),CommunityTopicModel(name: "湖人", picture: "laker"),CommunityTopicModel(name: "魔术", picture: "magic"),CommunityTopicModel(name: "步行者", picture: "pacer"),CommunityTopicModel(name: "猛龙", picture: "raptor"),CommunityTopicModel(name: "火箭", picture: "rocket"),CommunityTopicModel(name: "马刺", picture: "spurs"),CommunityTopicModel(name: "太阳", picture: "suns"),CommunityTopicModel(name: "雷霆", picture: "thunder"),CommunityTopicModel(name: "森林狼", picture: "wolves"),CommunityTopicModel(name: "勇士", picture: "worriors")]
-//            [CommunityTopicModel(name: "76人", picture: "76ers")],
-//            [CommunityTopicModel(name: "76人", picture: "76ers")],
-//            [CommunityTopicModel(name: "76人", picture: "76ers")]
-        ]
+        self.collectionViewData = CommunityTopicModel.initWithDataSource()
         
         //将tableView和collectionView添加到页面上
         view.addSubview(tableView)
@@ -93,13 +97,35 @@ extension CommunityTopicViewController: UITableViewDelegate,UITableViewDataSourc
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //右侧的collectionview滑动到对应的位置
+//        scrollCollectionView(section: indexPath.section,animated: true)
+        collectionView.scrollToItem(at: IndexPath(item: 0, section: indexPath.row), at: .top, animated: true)
+    }
+    
+//    func scrollCollectionView(section: Int,animated: Bool){
+//        let scrollOffset = getHeightOfSection(section: section)
+//        let topOfHeader = CGPoint(x: 0, y: scrollOffset.origin.y - collectionView.contentInset.top)
+//        collectionView.setContentOffset(topOfHeader, animated: animated)
+//    }
+//
+//    func getHeightOfSection(section: Int) -> CGRect{
+//        let indexPath = IndexPath(item: 0, section: section)
+//        let attributes = collectionView.collectionViewLayout
+//            .layoutAttributesForSupplementaryView(ofKind:
+//                UICollectionView.elementKindSectionHeader, at: indexPath)
+//        guard let frameForFirstCell = attributes?.frame else {
+//            return .zero
+//        }
+//        return frameForFirstCell
+//    }
     
 }
 
-extension CommunityTopicViewController: UICollectionViewDelegate,UICollectionViewDataSource{
+extension CommunityTopicViewController: UICollectionViewDelegateFlowLayout,UICollectionViewDataSource{
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1//tableViewData.count
+        return tableViewData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -114,5 +140,46 @@ extension CommunityTopicViewController: UICollectionViewDelegate,UICollectionVie
         return cell
     }
     
+    //添加分区头
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize{
+        return CGSize(width: UIScreen.main.bounds.width, height: 15)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView{
+        let view = collectionView.dequeueReusableSupplementaryView(ofKind:
+            UICollectionView.elementKindSectionHeader,withReuseIdentifier: "collectionViewHeader",for: indexPath) as! CommunityTopicHeader
+        view.titleLabel.text = tableViewData[indexPath.section]
+        return view
+    }
+    
+    
+    //分区头即将显示时调用
+    func collectionView(_ collectionView: UICollectionView, willDisplaySupplementaryView view: UICollectionReusableView, forElementKind elementKind: String, at indexPath: IndexPath){
+        //如果是由用户手动滑动屏幕造成的向上滚动，那么左侧表格自动选中该分区对应的分类
+        if !collectionViewIsScrollDown
+            && (collectionView.isDragging || collectionView.isDecelerating) {
+            tableView.selectRow(at: IndexPath(row: indexPath.section, section: 0),
+                                animated: true, scrollPosition: .top)
+        }
+    }
+    
+    //分区头即将消失时调用
+    func collectionView(_ collectionView: UICollectionView, didEndDisplayingSupplementaryView view: UICollectionReusableView, forElementOfKind elementKind: String, at indexPath: IndexPath){
+        //如果是由用户手动滑动屏幕造成的向下滚动，那么左侧表格自动选中该分区对应的下一个分区的分类
+        if collectionViewIsScrollDown
+            && (collectionView.isDragging || collectionView.isDecelerating) {
+            tableView.selectRow(at: IndexPath(row: indexPath.section + 1, section: 0),
+                                animated: true, scrollPosition: .top)
+        }
+    }
+    
+    //视图滚动时记录滑动方向
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if collectionView == scrollView{
+            
+            collectionViewIsScrollDown =  collectionViewLastOffsetY < scrollView.contentOffset.y
+            collectionViewLastOffsetY = scrollView.contentOffset.y
+        }
+    }
     
 }
