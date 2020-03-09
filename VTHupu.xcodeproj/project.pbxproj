@@ -33,6 +33,9 @@
 		973D843B2415E0650024702C /* CommunityTopicHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973D843A2415E0650024702C /* CommunityTopicHeader.swift */; };
 		973D843E241617A20024702C /* SearchScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973D843D241617A20024702C /* SearchScrollView.swift */; };
 		973D844024162BD00024702C /* HUPUHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973D843F24162BD00024702C /* HUPUHeadView.swift */; };
+		973D844324163AB20024702C /* NBANewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973D844224163AB20024702C /* NBANewsViewController.swift */; };
+		973D844624163C680024702C /* HupuNewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973D844524163C680024702C /* HupuNewsModel.swift */; };
+		973D844824163CEE0024702C /* HupuNewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973D844724163CEE0024702C /* HupuNewsCell.swift */; };
 		97A2261B240F49CF00223293 /* HupuSlideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A2261A240F49CF00223293 /* HupuSlideView.swift */; };
 		97EE42F3241222C000084584 /* CommunityFollowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EE42F2241222C000084584 /* CommunityFollowViewController.swift */; };
 		97EE42F5241222E300084584 /* CommunityTopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EE42F4241222E300084584 /* CommunityTopicViewController.swift */; };
@@ -69,6 +72,9 @@
 		973D843A2415E0650024702C /* CommunityTopicHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityTopicHeader.swift; sourceTree = "<group>"; };
 		973D843D241617A20024702C /* SearchScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScrollView.swift; sourceTree = "<group>"; };
 		973D843F24162BD00024702C /* HUPUHeadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUPUHeadView.swift; sourceTree = "<group>"; };
+		973D844224163AB20024702C /* NBANewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBANewsViewController.swift; sourceTree = "<group>"; };
+		973D844524163C680024702C /* HupuNewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HupuNewsModel.swift; sourceTree = "<group>"; };
+		973D844724163CEE0024702C /* HupuNewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HupuNewsCell.swift; sourceTree = "<group>"; };
 		97A2261A240F49CF00223293 /* HupuSlideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HupuSlideView.swift; sourceTree = "<group>"; };
 		97EE42F2241222C000084584 /* CommunityFollowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityFollowViewController.swift; sourceTree = "<group>"; };
 		97EE42F4241222E300084584 /* CommunityTopicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityTopicViewController.swift; sourceTree = "<group>"; };
@@ -107,7 +113,6 @@
 		970FEB96240CD51F00F19A2E /* VTHupu */ = {
 			isa = PBXGroup;
 			children = (
-				973D843C2416176C0024702C /* SearchHead */,
 				9716CF752410A18900FB971F /* ThirdLib */,
 				97343774240DF0530045CCC5 /* Common */,
 				9734376C240DEE7A0045CCC5 /* More(更多) */,
@@ -147,6 +152,7 @@
 		97343765240DED560045CCC5 /* Match(赛事) */ = {
 			isa = PBXGroup;
 			children = (
+				973D844124163A780024702C /* NBA */,
 				97343766240DEDC90045CCC5 /* ViewController */,
 			);
 			path = "Match(赛事)";
@@ -155,7 +161,6 @@
 		97343766240DEDC90045CCC5 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				97343780240DF5350045CCC5 /* HUPUNBAViewController.swift */,
 				97343772240DF0370045CCC5 /* HUPUMatchViewController.swift */,
 				97343782240DF54E0045CCC5 /* HUPUFootballViewController.swift */,
 				97343784240DF56F0045CCC5 /* HUPUFollowViewController.swift */,
@@ -167,6 +172,7 @@
 		97343768240DEDF90045CCC5 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				973D844424163C490024702C /* Model */,
 				9734376F240DEEC50045CCC5 /* View */,
 				9734376E240DEEB70045CCC5 /* ViewController */,
 			);
@@ -218,9 +224,12 @@
 		9734376F240DEEC50045CCC5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				973D843D241617A20024702C /* SearchScrollView.swift */,
+				973D843F24162BD00024702C /* HUPUHeadView.swift */,
 				970FEBAD240CD5F300F19A2E /* HupuContentView.swift */,
 				970FEBAB240CD5C100F19A2E /* HupuTitleView.swift */,
 				97A2261A240F49CF00223293 /* HupuSlideView.swift */,
+				973D844724163CEE0024702C /* HupuNewsCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -268,13 +277,21 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
-		973D843C2416176C0024702C /* SearchHead */ = {
+		973D844124163A780024702C /* NBA */ = {
 			isa = PBXGroup;
 			children = (
-				973D843D241617A20024702C /* SearchScrollView.swift */,
-				973D843F24162BD00024702C /* HUPUHeadView.swift */,
+				97343780240DF5350045CCC5 /* HUPUNBAViewController.swift */,
+				973D844224163AB20024702C /* NBANewsViewController.swift */,
 			);
-			path = SearchHead;
+			path = NBA;
+			sourceTree = "<group>";
+		};
+		973D844424163C490024702C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				973D844524163C680024702C /* HupuNewsModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		97EE42F824122C6C00084584 /* Model */ = {
@@ -378,7 +395,9 @@
 				97EE42FD2412356500084584 /* CommunityCatageryCell.swift in Sources */,
 				97343773240DF0370045CCC5 /* HUPUMatchViewController.swift in Sources */,
 				973D844024162BD00024702C /* HUPUHeadView.swift in Sources */,
+				973D844824163CEE0024702C /* HupuNewsCell.swift in Sources */,
 				9734377F240DF2600045CCC5 /* HUPUMoreViewController.swift in Sources */,
+				973D844324163AB20024702C /* NBANewsViewController.swift in Sources */,
 				970FEBB2240D062500F19A2E /* HUPURecommandViewController.swift in Sources */,
 				973D843E241617A20024702C /* SearchScrollView.swift in Sources */,
 				97343787240DF5DD0045CCC5 /* HUPUCBAViewController.swift in Sources */,
@@ -391,6 +410,7 @@
 				9734377C240DF2160045CCC5 /* HUPUVedioViewController.swift in Sources */,
 				970FEB9A240CD51F00F19A2E /* HUPUMainViewController.swift in Sources */,
 				97A2261B240F49CF00223293 /* HupuSlideView.swift in Sources */,
+				973D844624163C680024702C /* HupuNewsModel.swift in Sources */,
 				97EE42FA2412345A00084584 /* CommunityTopicCell.swift in Sources */,
 				970FEB98240CD51F00F19A2E /* AppDelegate.swift in Sources */,
 				97343779240DF1D50045CCC5 /* HUPUCommunityViewController.swift in Sources */,

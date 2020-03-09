@@ -12,7 +12,7 @@ class HUPUNBAViewController: UIViewController {
 
     private let titles = ["热议","新闻","赛程","数据"]
     
-    private let controllers = [HUPUFollowViewController(),HUPUFollowViewController(),HUPUFollowViewController(),HUPUFollowViewController()]
+    private let controllers = [NBANewsViewController(),NBANewsViewController(),HUPUFollowViewController(),HUPUFollowViewController()]
     
     
     lazy var matchTitleMenu: CKSlideMenu = {
