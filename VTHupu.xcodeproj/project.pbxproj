@@ -110,12 +110,12 @@
 				973D843C2416176C0024702C /* SearchHead */,
 				9716CF752410A18900FB971F /* ThirdLib */,
 				97343774240DF0530045CCC5 /* Common */,
-				9734376C240DEE7A0045CCC5 /* More */,
-				9734376B240DEE6D0045CCC5 /* Vedio */,
-				9734376A240DEE5B0045CCC5 /* Community */,
-				97343769240DEE420045CCC5 /* Recommand */,
+				9734376C240DEE7A0045CCC5 /* More(更多) */,
+				9734376B240DEE6D0045CCC5 /* Vedio(视频) */,
+				9734376A240DEE5B0045CCC5 /* Community(社区) */,
+				97343769240DEE420045CCC5 /* Recommand(推荐) */,
 				97343768240DEDF90045CCC5 /* Main */,
-				97343765240DED560045CCC5 /* Match */,
+				97343765240DED560045CCC5 /* Match(赛事) */,
 				970FEB97240CD51F00F19A2E /* AppDelegate.swift */,
 				970FEB9B240CD51F00F19A2E /* Main.storyboard */,
 				970FEB9E240CD52000F19A2E /* Assets.xcassets */,
@@ -144,12 +144,12 @@
 			path = PopupMenu;
 			sourceTree = "<group>";
 		};
-		97343765240DED560045CCC5 /* Match */ = {
+		97343765240DED560045CCC5 /* Match(赛事) */ = {
 			isa = PBXGroup;
 			children = (
 				97343766240DEDC90045CCC5 /* ViewController */,
 			);
-			path = Match;
+			path = "Match(赛事)";
 			sourceTree = "<group>";
 		};
 		97343766240DEDC90045CCC5 /* ViewController */ = {
@@ -173,38 +173,38 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
-		97343769240DEE420045CCC5 /* Recommand */ = {
+		97343769240DEE420045CCC5 /* Recommand(推荐) */ = {
 			isa = PBXGroup;
 			children = (
 				97343770240DEED80045CCC5 /* ViewController */,
 			);
-			path = Recommand;
+			path = "Recommand(推荐)";
 			sourceTree = "<group>";
 		};
-		9734376A240DEE5B0045CCC5 /* Community */ = {
+		9734376A240DEE5B0045CCC5 /* Community(社区) */ = {
 			isa = PBXGroup;
 			children = (
 				97EE42FB2412345F00084584 /* View */,
 				97EE42F824122C6C00084584 /* Model */,
 				97343777240DF1B90045CCC5 /* ViewController */,
 			);
-			path = Community;
+			path = "Community(社区)";
 			sourceTree = "<group>";
 		};
-		9734376B240DEE6D0045CCC5 /* Vedio */ = {
+		9734376B240DEE6D0045CCC5 /* Vedio(视频) */ = {
 			isa = PBXGroup;
 			children = (
 				9734377A240DF1FD0045CCC5 /* ViewController */,
 			);
-			path = Vedio;
+			path = "Vedio(视频)";
 			sourceTree = "<group>";
 		};
-		9734376C240DEE7A0045CCC5 /* More */ = {
+		9734376C240DEE7A0045CCC5 /* More(更多) */ = {
 			isa = PBXGroup;
 			children = (
 				9734377D240DF2430045CCC5 /* ViewController */,
 			);
-			path = More;
+			path = "More(更多)";
 			sourceTree = "<group>";
 		};
 		9734376E240DEEB70045CCC5 /* ViewController */ = {
