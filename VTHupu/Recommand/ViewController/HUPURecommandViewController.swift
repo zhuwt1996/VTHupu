@@ -10,22 +10,18 @@ import UIKit
 
 class HUPURecommandViewController: UIViewController {
 
-    fileprivate lazy var label: UILabel = {
-        let label = UILabel()
-        label.text = "1"
-        label.font = UIFont.systemFont(ofSize: 50)
-        label.textColor = UIColor.red
-        label.textAlignment = .center
-        label.frame = CGRect(x: 0, y: 250, width: kScreenW, height: 50)
-        return label
+    lazy var headView: HUPUHeadView = {
+        let view = HUPUHeadView(frame: CGRect(x: 0, y: 20, width: kScreenW, height: 60))
+        return view
     }()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         
         view.backgroundColor = UIColor.white
-        view.addSubview(label)
+        view.addSubview(headView)
     }
     
 }

@@ -16,22 +16,12 @@ class HUPUMatchViewController: UIViewController {
     
     private let titles = ["NBA","国际足球","关注","CBA","中国足球","数码","王者荣耀"]
     
-    private let publishTitles = ["发图文","发视频"]
-    
-    private let publishIcons = ["pic","vcd"]
-    
-    
-    lazy var searchScrollView: SearchScrollView = {
-        let view = SearchScrollView(frame: CGRect(x: 30, y: 8, width: kScreenW - 150, height: 15))
-        view.timeInteval = 8.0
-        view.dataSource = ["詹姆斯｜朱武涛｜湖人总冠军","哈登|威少|抗疫战士","杨毅死🐎|柯🐶吃💩|詹黑脑瘫"]
-        view.direction = .up
-        
+    private let controllers = [HUPUNBAViewController(),HUPUFollowViewController(),HUPUFollowViewController(),HUPUCBAViewController(),HUPUFootballViewController(),HUPUFollowViewController(),HUPUFollowViewController()]
+
+    lazy var headView: HUPUHeadView = {
+        let view = HUPUHeadView(frame: CGRect(x: 0, y: 20, width: kScreenW, height: 60))
         return view
     }()
-    
-    private let controllers = [HUPUNBAViewController(),HUPUFollowViewController(),HUPUFollowViewController(),HUPUCBAViewController(),HUPUFootballViewController(),HUPUFollowViewController(),HUPUFollowViewController()]
-    
 
     lazy var matchTitleMenu: CKSlideMenu = {
         let menu = CKSlideMenu(frame: CGRect(x:0,y:68,width:view.frame.width - 60,height:40), titles: titles, childControllers: controllers)
@@ -52,49 +42,6 @@ class HUPUMatchViewController: UIViewController {
         return menu
     }()
     
-    lazy var hupuImg: UIImageView = {
-        let img = UIImageView(frame: CGRect(x: 5, y: 20, width: 65, height: 60))
-        img.image = UIImage(named: "hupu")
-        return img
-    }()
-    
-    lazy var searchView: UIView = {
-        let view = UIView(frame: CGRect(x: 75, y: 37, width: kScreenW - 120, height: 30))
-        view.layer.cornerRadius = 15
-        view.backgroundColor = UIColor.init(hexString: "#F2F2F2")
-        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goToSearch)))
-        return view
-    }()
-    
-    
-    lazy var searchImg: UIImageView = {
-        let img = UIImageView(frame: CGRect(x: 10, y: 8, width: 15, height: 15))
-        img.image = UIImage(named: "searchicon")
-        return img
-    }()
-    
-    
-    lazy var publishView: UIView = {
-        let view = UIView(frame: CGRect(x: kScreenW - 38, y: 20, width: 30, height: 45))
-        view.isUserInteractionEnabled = true
-        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(publish)))
-        return view
-    }()
-    
-    lazy var publishImg: UIImageView = {
-        let img = UIImageView(frame: CGRect(x: 0, y: 17, width: 22, height: 22))
-        img.image = UIImage(named: "publish")
-        
-        return img
-    }()
-    
-    lazy var publishLab: UILabel = {
-        let lab = UILabel(frame: CGRect(x: 0, y: 40, width: 30, height: 10))
-        lab.text = "发布"
-        lab.textColor = UIColor.gray
-        lab.font = UIFont.systemFont(ofSize: 9)
-        return lab
-    }()
     
     lazy var channelView: UIView = {
         let view = UIView(frame: CGRect(x: kScreenW - 60, y: 68, width: 60, height: 35))
@@ -125,49 +72,14 @@ class HUPUMatchViewController: UIViewController {
     }
     
     func setupUI(){
-        // 设置导航栏
-        setupNavigationBar()
-        view.addSubview(matchTitleMenu)
-    }
-    
-    fileprivate func setupNavigationBar(){
-        view.addSubview(hupuImg)
         
-        searchView.addSubview(searchImg)
-        searchView.addSubview(searchScrollView)
-        view.addSubview(searchView)
-        
-        publishView.addSubview(publishImg)
-        publishView.addSubview(publishLab)
-        view.addSubview(publishView)
+        view.addSubview(headView)
         
         channelView.addSubview(channelLab)
         channelView.addSubview(channelImg)
         view.addSubview(channelView)
-    }
-    
-    @objc func goToSearch(){
-        print("search")
-    }
-    
-    @objc func publish(){
-        let menu = PopupMenu.showRelyOnView(view: publishImg, titles: publishTitles, icons: publishIcons, menuWidth: 115, didSelectRow: { (index, value, menu) in
-            if index == 0{
-                print("发图文")
-            }else if index == 1{
-                print("发视频")
-            }
-        }) { (menu) in
-            menu.backColor = UIColor.white
-            menu.separatorColor = UIColor.gray
-            menu.priorityDirection = PopupMenuPriorityDirection.top
-            menu.borderWidth = 1
-            menu.borderColor = UIColor.clear
-            menu.arrowDirection = .left
-            menu.cornerRadius = 10.0
-            menu.rectCorner = [.topLeft,.topRight,.bottomRight,.bottomLeft]
-        }
-        print(menu.arrowDirection)
+        
+        view.addSubview(matchTitleMenu)
     }
     
     

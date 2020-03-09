@@ -14,6 +14,11 @@ class HUPUCommunityViewController: UIViewController {
     
     private let controllers = [CommunityFollowViewController(),CommunityTopicViewController()]
     
+    lazy var headView: HUPUHeadView = {
+        let view = HUPUHeadView(frame: CGRect(x: 0, y: 20, width: kScreenW, height: 60))
+        return view
+    }()
+    
     lazy var communityTitleMenu: CKSlideMenu = {
         let menu = CKSlideMenu(frame: CGRect(x:0,y:68,width:view.frame.width / 4,height:40), titles: titles, childControllers: controllers)
         //内容的frame
@@ -43,7 +48,10 @@ class HUPUCommunityViewController: UIViewController {
     }
     
     func setupUI(){
+        
+        view.addSubview(headView)
         view.addSubview(communityTitleMenu)
+        
     }
     
 }

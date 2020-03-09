@@ -32,6 +32,7 @@
 		97343789240DFDB50045CCC5 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97343788240DFDB50045CCC5 /* UIColor+Extension.swift */; };
 		973D843B2415E0650024702C /* CommunityTopicHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973D843A2415E0650024702C /* CommunityTopicHeader.swift */; };
 		973D843E241617A20024702C /* SearchScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973D843D241617A20024702C /* SearchScrollView.swift */; };
+		973D844024162BD00024702C /* HUPUHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973D843F24162BD00024702C /* HUPUHeadView.swift */; };
 		97A2261B240F49CF00223293 /* HupuSlideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A2261A240F49CF00223293 /* HupuSlideView.swift */; };
 		97EE42F3241222C000084584 /* CommunityFollowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EE42F2241222C000084584 /* CommunityFollowViewController.swift */; };
 		97EE42F5241222E300084584 /* CommunityTopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EE42F4241222E300084584 /* CommunityTopicViewController.swift */; };
@@ -67,6 +68,7 @@
 		97343788240DFDB50045CCC5 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		973D843A2415E0650024702C /* CommunityTopicHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityTopicHeader.swift; sourceTree = "<group>"; };
 		973D843D241617A20024702C /* SearchScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScrollView.swift; sourceTree = "<group>"; };
+		973D843F24162BD00024702C /* HUPUHeadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUPUHeadView.swift; sourceTree = "<group>"; };
 		97A2261A240F49CF00223293 /* HupuSlideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HupuSlideView.swift; sourceTree = "<group>"; };
 		97EE42F2241222C000084584 /* CommunityFollowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityFollowViewController.swift; sourceTree = "<group>"; };
 		97EE42F4241222E300084584 /* CommunityTopicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityTopicViewController.swift; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				973D843D241617A20024702C /* SearchScrollView.swift */,
+				973D843F24162BD00024702C /* HUPUHeadView.swift */,
 			);
 			path = SearchHead;
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 				97EE42F3241222C000084584 /* CommunityFollowViewController.swift in Sources */,
 				97EE42FD2412356500084584 /* CommunityCatageryCell.swift in Sources */,
 				97343773240DF0370045CCC5 /* HUPUMatchViewController.swift in Sources */,
+				973D844024162BD00024702C /* HUPUHeadView.swift in Sources */,
 				9734377F240DF2600045CCC5 /* HUPUMoreViewController.swift in Sources */,
 				970FEBB2240D062500F19A2E /* HUPURecommandViewController.swift in Sources */,
 				973D843E241617A20024702C /* SearchScrollView.swift in Sources */,
