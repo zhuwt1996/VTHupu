@@ -36,7 +36,8 @@
 		973D844324163AB20024702C /* NBANewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973D844224163AB20024702C /* NBANewsViewController.swift */; };
 		973D844624163C680024702C /* HupuNewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973D844524163C680024702C /* HupuNewsModel.swift */; };
 		973D844824163CEE0024702C /* HupuNewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973D844724163CEE0024702C /* HupuNewsCell.swift */; };
-		9778B7DA24174312003726AC /* HupuVedioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9778B7D924174312003726AC /* HupuVedioView.swift */; };
+		9778B7DA24174312003726AC /* HupuVedioCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9778B7D924174312003726AC /* HupuVedioCell.swift */; };
+		9778B7DD24176269003726AC /* HupuVedioModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9778B7DC24176269003726AC /* HupuVedioModel.swift */; };
 		97A2261B240F49CF00223293 /* HupuSlideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A2261A240F49CF00223293 /* HupuSlideView.swift */; };
 		97EE42F3241222C000084584 /* CommunityFollowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EE42F2241222C000084584 /* CommunityFollowViewController.swift */; };
 		97EE42F5241222E300084584 /* CommunityTopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EE42F4241222E300084584 /* CommunityTopicViewController.swift */; };
@@ -76,7 +77,8 @@
 		973D844224163AB20024702C /* NBANewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBANewsViewController.swift; sourceTree = "<group>"; };
 		973D844524163C680024702C /* HupuNewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HupuNewsModel.swift; sourceTree = "<group>"; };
 		973D844724163CEE0024702C /* HupuNewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HupuNewsCell.swift; sourceTree = "<group>"; };
-		9778B7D924174312003726AC /* HupuVedioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HupuVedioView.swift; sourceTree = "<group>"; };
+		9778B7D924174312003726AC /* HupuVedioCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HupuVedioCell.swift; sourceTree = "<group>"; };
+		9778B7DC24176269003726AC /* HupuVedioModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HupuVedioModel.swift; sourceTree = "<group>"; };
 		97A2261A240F49CF00223293 /* HupuSlideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HupuSlideView.swift; sourceTree = "<group>"; };
 		97EE42F2241222C000084584 /* CommunityFollowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityFollowViewController.swift; sourceTree = "<group>"; };
 		97EE42F4241222E300084584 /* CommunityTopicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityTopicViewController.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 		9734376B240DEE6D0045CCC5 /* Vedio(视频) */ = {
 			isa = PBXGroup;
 			children = (
+				9778B7DB2417624B003726AC /* Model */,
 				9778B7D8241742E7003726AC /* View */,
 				9734377A240DF1FD0045CCC5 /* ViewController */,
 			);
@@ -300,9 +303,17 @@
 		9778B7D8241742E7003726AC /* View */ = {
 			isa = PBXGroup;
 			children = (
-				9778B7D924174312003726AC /* HupuVedioView.swift */,
+				9778B7D924174312003726AC /* HupuVedioCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		9778B7DB2417624B003726AC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9778B7DC24176269003726AC /* HupuVedioModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		97EE42F824122C6C00084584 /* Model */ = {
@@ -401,6 +412,7 @@
 				970FEBAE240CD5F300F19A2E /* HupuContentView.swift in Sources */,
 				9716CF802410EEAC00FB971F /* PopupMenuPath.swift in Sources */,
 				97EE42F724122C6700084584 /* CommunityTopicModel.swift in Sources */,
+				9778B7DD24176269003726AC /* HupuVedioModel.swift in Sources */,
 				97343781240DF5350045CCC5 /* HUPUNBAViewController.swift in Sources */,
 				97EE42F3241222C000084584 /* CommunityFollowViewController.swift in Sources */,
 				97EE42FD2412356500084584 /* CommunityCatageryCell.swift in Sources */,
@@ -413,7 +425,7 @@
 				973D843E241617A20024702C /* SearchScrollView.swift in Sources */,
 				97343787240DF5DD0045CCC5 /* HUPUCBAViewController.swift in Sources */,
 				97343783240DF54E0045CCC5 /* HUPUFootballViewController.swift in Sources */,
-				9778B7DA24174312003726AC /* HupuVedioView.swift in Sources */,
+				9778B7DA24174312003726AC /* HupuVedioCell.swift in Sources */,
 				9716CF7F2410EEAC00FB971F /* RectConst.swift in Sources */,
 				973D843B2415E0650024702C /* CommunityTopicHeader.swift in Sources */,
 				97EE42F5241222E300084584 /* CommunityTopicViewController.swift in Sources */,
