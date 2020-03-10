@@ -19,12 +19,12 @@ class HupuNewsCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        titleLabel.frame = CGRect.init(x: 20, y: 0,width: kScreenW/4 * 3, height: 50)
-        titleLabel.font = UIFont.systemFont(ofSize: 16)
+        titleLabel.frame = CGRect.init(x: 20, y: 0,width: kScreenW/4 * 3 - 15, height: 70)
+        titleLabel.font = UIFont.systemFont(ofSize: 15)
         titleLabel.numberOfLines = 0
         contentView.addSubview(titleLabel)
         
-        pictureView.frame = CGRect(x: kScreenW/4 * 3 + 3, y: 0, width: kScreenW/4 - 6, height: 50)
+        pictureView.frame = CGRect(x: kScreenW/4 * 3 + 3, y: 0, width: kScreenW/4 - 15, height: 80)
         pictureView.contentMode = .scaleAspectFit
         contentView.addSubview(pictureView)
         
